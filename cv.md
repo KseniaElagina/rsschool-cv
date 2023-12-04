@@ -8,7 +8,10 @@ E-mail: KseniaElagina2003@gmail.com\
 Telegram: @tnanguper
 ***
 ### Brief Self-Introduction: 
-I am a third-year student at a university in Yaroslavl.  I am studying at the Faculty of Informatics and Computer Engineering and I want to gain experience as a front-end developer.  In this course I plan to master the basics of this profession.
+I am a third-year student at a university in Yaroslavl.\
+I am studying at the Faculty of Informatics and Computer Engineering\ 
+and I want to gain experience as a front-end developer.\  
+In this course I plan to master the basics of this profession.
 ***
 ### Skills and Proficiency: 
 * JS Basic
@@ -61,8 +64,8 @@ class _PasswordFieldState extends State<PasswordField> {
         controller: passwordController,
         decoration: InputDecoration(
 
-          floatingLabelBehavior: FloatingLabelBehavior.never, //Hides label on focus or if filled
-          hintText: widget.text, // Используйте значение параметра text
+          floatingLabelBehavior: FloatingLabelBehavior.never,
+          hintText: widget.text,
           hintStyle: TextStyle(
             color: Color(0xFF8D8D8D),
             fontSize: 16,
@@ -83,8 +86,8 @@ class _PasswordFieldState extends State<PasswordField> {
 
                   setState(() {
                     _obscured = !_obscured;
-                    if (textFieldFocusNode.hasPrimaryFocus) return; // If focus is on text field, dont unfocus
-                    textFieldFocusNode.canRequestFocus = false;     // Prevents focus if tap on eye
+                    if (textFieldFocusNode.hasPrimaryFocus) return;
+                    textFieldFocusNode.canRequestFocus = false;
                   });
                 },
                 icon: _obscured
@@ -108,7 +111,9 @@ class _PasswordFieldState extends State<PasswordField> {
   }
 }
 ```
-
+#### Work Experience:
+Developing a project at the university using flutter:\
+creating an application for tracking the expiration date of products.
 
 
 
