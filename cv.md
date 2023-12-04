@@ -21,99 +21,42 @@ In this course I plan to master the basics of this profession.
 ***
 #### Code Examples:
 ```
-class PasswordField extends StatefulWidget {
-  final String text;
-  const PasswordField({Key? key, required this.text}) : super(key: key);
+function neutralise(s1, s2) {
+  let result = "";
 
-  @override
-  _PasswordFieldState createState() => _PasswordFieldState();
-}
+  for (let i = 0; i < s1.length; i++) {
+    const char1 = s1[i];
+    const char2 = s2[i];
 
-class _PasswordFieldState extends State<PasswordField> {
-  final textFieldFocusNode = FocusNode();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  final emailFocusNode = FocusNode();
-  final passwordFocusNode = FocusNode();
-  bool _obscured = true;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 343,
-      height: 56,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-      clipBehavior: Clip.antiAlias,
-      decoration: ShapeDecoration(
-        color: Color(0xFFEEEEEE),
-
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.50),
-        ),
-      ),
-
-      child:
-      new TextFormField(
-
-
-        keyboardType: TextInputType.visiblePassword,
-        obscureText: _obscured,
-        focusNode: textFieldFocusNode,
-        controller: passwordController,
-        decoration: InputDecoration(
-
-          floatingLabelBehavior: FloatingLabelBehavior.never,
-          hintText: widget.text,
-          hintStyle: TextStyle(
-            color: Color(0xFF8D8D8D),
-            fontSize: 16,
-            fontFamily: 'Raleway',
-            fontWeight: FontWeight.w500,
-          ),
-          border: InputBorder.none,
-          suffixIconConstraints: BoxConstraints(maxHeight: 24, maxWidth: 24),
-
-          suffixIcon: SizedBox(
-              width: 24,
-              height: 24,
-              child: IconButton(
-                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-
-
-                onPressed: () {
-
-                  setState(() {
-                    _obscured = !_obscured;
-                    if (textFieldFocusNode.hasPrimaryFocus) return;
-                    textFieldFocusNode.canRequestFocus = false;
-                  });
-                },
-                icon: _obscured
-                ? SvgPicture.asset('assets/icons/Eye_open.svg')
-                : SvgPicture.asset('assets/icons/Eye_closed.svg'),
-
-                  iconSize: 24,
-                  color: Color(0xFF8D8D8D),
-
-                style: IconButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: EdgeInsetsDirectional.all(0.0),
-              ),
-
-          ),
-          ),
-        ),
-
-      ),
-    );
+    if (char1 === "+" && char2 === "+") {
+      result += "+";
+    } else if (char1 === "-" && char2 === "-") {
+      result += "-";
+    } else {
+      result += "0";
+    }
   }
+
+  return result;
 }
+
+// Примеры использования
+console.log(neutralise("+-+", "+--")); // "+-0"
+console.log(neutralise("--++--", "++--++")); // "000000"
+console.log(neutralise("-+-+-+", "-+-+-+")); // "-+-+-+"
+console.log(neutralise("-++-", "-+-+")); // "-+00"
 ```
 #### Work Experience:
 Developing a project at the university using flutter:\
 creating an application for tracking the expiration date of products.
+-------
+#### Education:
+Completed secondary education.\
+I'm a 3rd year student at Yaroslavl State Universiry.
+----
+#### English Language:
+Elementary - A2
+
 
 
 
